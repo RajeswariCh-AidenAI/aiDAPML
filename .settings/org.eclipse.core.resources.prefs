@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/aidap/ml/classification/gp2.py=utf-8
+encoding//src/aidap/ml/document_search/QA_flan-t5-base.py=utf-8
+encoding//src/aidap/ml/sematicsearch/minilm.py=utf-8
+encoding/<project>=UTF-8

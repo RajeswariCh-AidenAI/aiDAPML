@@ -1,0 +1,75 @@
+//this method implements hierarchy of nodes for a given path
+
+//if the path string has any of the following keywords, it's a function. It should be replaced by equivalent java function implementation
+
+//concat ::: concat
+
+//starts-with ::: startsWith
+
+//count ::: count
+
+//contains ::: contains
+
+//substring ::: substring
+
+//substring-before ::: substringBefore
+
+//substring-after ::: substringAfter
+
+//string-length ::: length
+
+//normalize-space ::: trim
+
+//translate
+
+//format-number
+
+
+
+
+  public void getData(ParentNode parent){
+
+   
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[1]"*/
+
+    inventory.getBookstore().getbook().get(0);
+    
+    
+    
+    /*implement the hierarchy of nodes for "media/section/article[1]"*/
+
+    media.getSection().getarticle().get(0);
+    
+    
+    
+    /*implement the hierarchy of nodes for "food/menu/item[1]"*/
+
+    food.getMenu().getitem().get(0);
+    
+    
+    
+    /*implement the hierarchy of nodes for "media/section/article[last()]"*/
+
+    media.getSection().getArticle().get(media.getSection().getArticle().size());
+    
+       
+    
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[last()]"*/
+
+    inventory.getBookstore().getBook().get(inventory.getStore().getBook().size());
+    
+    
+    
+    /*implement the hierarchy of nodes for "food/menu/item[last()]"*/
+
+    food.getMenu().getItem().get(food.getMenu().getItem().size());
+    
+
+  
+    /*implement the hierarchy of nodes for "<TEST CODE>"*/
+
+    <FILL_ME>
+
+    return result
+
+  }

@@ -1,0 +1,12 @@
+Code,Type,Sub_type
+int i;,Field_Declaration,int
+int i=0;,Field_Declaration,int
+private int j;,Field_Declaration,int
+private double k = 0.0;,Field_Declaration,double
+"Private Static final String x = ""test"";",Field_Declaration,string
+protect float l = 1.2f;,Field_Declaration,float
+"private int i,j,k;",Field_Declaration,int
+i=j;,Field_Assignment,variable
+i++,Field_Assignment,operator
+i = j>k?j:k;,Field_Assignment,expression
+"test = ""test"";",Field_Assignment,string literal

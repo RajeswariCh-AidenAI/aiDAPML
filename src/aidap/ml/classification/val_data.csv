@@ -1,0 +1,8 @@
+Code,Type
+int k = 5;,Field_Declaration
+k = k+10,Field_Assignment
+"string s = ""abc""",Field_Declaration
+private float = 4.5f;,Field_Declaration
+Integer num = 16,Field_Declaration
+k = s.length(),Field_Assignment
+num = num%10,Field_Assignment

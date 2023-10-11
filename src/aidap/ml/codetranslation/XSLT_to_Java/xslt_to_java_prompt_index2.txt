@@ -1,0 +1,87 @@
+//this method implements hierarchy of nodes for a given path
+
+//if the path string has any of the following keywords, it's a function. It should be replaced by equivalent java function implementation
+
+//concat ::: concat
+
+//starts-with ::: startsWith
+
+//count ::: count
+
+//contains ::: contains
+
+//substring ::: substring
+
+//substring-before ::: substringBefore
+
+//substring-after ::: substringAfter
+
+//string-length ::: length
+
+//normalize-space ::: trim
+
+//translate
+
+//format-number
+
+
+
+
+  public void getData(ParentNode parent){
+
+   
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[1]" */
+
+    inventory.getBookstore().getbook().get(0);
+    
+    
+    
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[last()]" */
+
+    inventory.getBookstore().getBook().get(inventory.getBookstore().getBook().size());
+    
+    
+    
+    /*implement the hierarchy of nodes for "media/section/article[last()]" */
+
+    media.getSection().getArticle().get(media.getSection().getArticle().size());
+    
+    
+    
+    /*implement the hierarchy of nodes for "food/menu/item[last()-1]" */
+
+    food.getmenu.getitem().get(menu.getitem().size()-1)
+
+    
+    
+    /*implement the hierarchy of nodes for "media/section/article[position()<3]" */
+
+    media.getSection.getArticle().get(section.getarticle().size()-2)
+
+ 
+
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[price>35.00]" */
+
+    inventory.getBookstore().getBooks().stream().filter(book->book.getPrice().compareTo(BigDecimal.valueOf(35.00))>0).toList();
+    
+ 
+
+    /*implement the hierarchy of nodes for "food/menu/item[cost>15.00]/name" */
+
+    food.getMenu().getItems().stream().filter(b->b.getCost()>15).toList().map(b->b.title).collect(Collectors.toList());
+
+
+
+    /*implement the hierarchy of nodes for "/Program/Event/StartTime[text()='5']/@units" */
+
+    food.getMenu().getItems().stream().filter(b->b.getCost()>15).toList().map(b->b.title).collect(Collectors.toList());
+        
+        
+        
+    /*implement the hierarchy of nodes for "<TEST CODE>" where parent is "inventory"*/
+
+    """ <FILL_ME>
+
+    return result
+
+  }

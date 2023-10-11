@@ -1,0 +1,17 @@
+
+
+CREATE FILTER MODULE IFT_submit_XML_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		IF (LocalEnvironment.Variables.IFT.error_message IS NOT NULL) THEN
+			RETURN TRUE;
+		ELSE 
+			
+			SET LocalEnvironment.Destination.HTTP.ReplyStatusCode = '201';
+			
+			RETURN FALSE;
+		END IF;
+	END;
+	
+END MODULE;

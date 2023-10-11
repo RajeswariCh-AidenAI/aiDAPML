@@ -1,0 +1,67 @@
+esql: BROKER SCHEMA IBM_FoodTrust_Utils
+java: package IBM_FoodTrust_Utils;
+####
+esql: CREATE COMPUTE MODULE Auth_backup_message
+java: public class Auth_backup_message{private LocalEnvironment OutputLocalEnvironment; private LocalEnvironment InputLocalEnvironment; private Root InputRoot; private Root OutputRoot;
+####
+esql: CREATE FUNCTION Main() RETURNS BOOLEAN
+java: public boolean main() 
+####
+esql: BEGIN
+java: {
+####
+esql: END;
+java: }
+####
+esql: END MODULE;
+java: }
+####
+esql: CALL XYZMethod();
+java: XYZMethod();
+####
+esql: SET OutputLocalEnvironment = InputLocalEnvironment;
+java: OutputLocalEnvironment = InputLocalEnvironment;
+####
+esql: SET OutputLocalEnvironment.Variables.message_backup = InputRoot;
+java: OutputLocalEnvironment.getVariables().put("message_backup",InputRoot);
+####
+esql: RETURN TRUE;
+java: return true;
+####
+esql: CREATE PROCEDURE CopyEntireMessage() BEGIN
+java: public void CopyEntireMessage() {
+####
+esql: CREATE PROCEDURE CopyEntireMessage()
+java: public void CopyEntireMessage()
+####
+esql: DECLARE J INTEGER;
+java: int J;
+####
+esql: DECLARE I INTEGER 1;
+java: int I=1;
+####
+esql: SET J = CARDINALITY(InputRoot.*[]);
+java: J = InputRoot.getChildren().size();
+####
+esql: WHILE I < J DO
+java: while(I<J){
+####
+esql: END WHILE;
+java: }
+####
+esql: SET OutputLocalEnvironment.Destination.HTTP.ReplyStatusCode = '500';
+java: OutputLocalEnvironment.getDesitnation().HTTP().setReplyStatusCode(500);
+####
+esql: SET I = I + 1;
+java: I = I + 1;
+####
+esql: SET OutputRoot.*[I] = InputRoot.*[I];
+java: OutputRoot.setChildNode(I, InputRoot.getChildNode(I));
+####
+esql: SET OutputRoot.HTTPReplyHeader."Content-Type" = 'text/json';
+java: OutputRoot.getHTTPReplyHeader().set("Content-Type", 'text/json');
+####
+esql: IF (OutputLocalEnvironment.Variables.IFT.error_message IS NOT NULL) THEN
+java: if(OutputLocalEnvironment.getVariable("IFT").getError_message() !=null) {
+####
+esql:

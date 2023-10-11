@@ -1,0 +1,12 @@
+esql: DECLARE I INTEGER 1
+java: int I=1;
+####
+esql: DECLARE J INTEGER
+java: int j;
+####
+esql: SET X='hi'
+java: String str = "hi";
+####
+esql: SET isEmpty = TRUE
+java: boolean isEmpty = true;
+####

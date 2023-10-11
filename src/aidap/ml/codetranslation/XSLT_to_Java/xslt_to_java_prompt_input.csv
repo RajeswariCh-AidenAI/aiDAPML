@@ -1,0 +1,13 @@
+category,xslt,java
+value-of select,dummyNode/in/class,dummyNode.getIn().getClass()
+value-of select,product/eflowFCMComposite/id,product.getEflowFCMComposite().getId()
+value-of select,employee/../location,employee.getLocation()
+value-of select,rootNode/nodes/@location,rootNode.getNodes().getLocation()
+value-of select,rootNode/nodes/@xmi:id,rootNode.getNodes().getId()
+value-of select,fcmComposite/eClassifiers/@nodeLayoutStyle,fcmComposite.getEClassifiers().getNodeLayoutStyle()
+index,inventory/bookstore/book[1],inventory.getBookstore().getbook().get(0);
+index,media/section/article[1],media.getSection().getarticle().get(0);
+index,food/menu/item[1],food.getMenu().getitem().get(0);
+index,media/section/article[last()],media.getSection().getArticle().get(media.getSection().getArticle().size());
+index,inventory/bookstore/book[last()],inventory.getBookstore().getBook().get(inventory.getStore().getBook().size());
+index,food/menu/item[last()],food.getMenu().getItem().get(food.getMenu().getItem().size());

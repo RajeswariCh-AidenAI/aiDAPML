@@ -1,0 +1,9 @@
+category,xslt
+index2,//book[@year>2001]/title/text()
+index,//book[1]/title/text()
+value_of_select,//book/title
+index2,//book[author='Neal Stephenson']/title/text()
+value_of_select,store/section/item
+index,/store/book[1]/@id
+index2,/bookstore/book[price>35.00]
+index,/bookstore/book[last()]

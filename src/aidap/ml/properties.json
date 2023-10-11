@@ -1,0 +1,30 @@
+{
+	"classification":
+	{
+		"model_path" : "../Classification/",
+		"val_data_path": "../Classification/val_data.csv"
+	}
+	,
+	"codetranslation":
+	{	
+		"input_data_path": "../codetranslation/prompt_input.csv",
+		"prompt_path": "../codetranslation/",
+		"input_prompt" : "../codetranslation/IFT_submit_XML_Catch_Response.esql",
+		"output" : "../codetranslation/test.java"
+	}
+	,
+	"xslt_to_java":
+	{
+		"base_path":"../codetranslation/XSLT_to_Java/",
+		"model_path": "/home/ubuntu/suresh/models/codellam2_7b_hf_model",
+		"tokenizer_path": "/home/ubuntu/suresh/models/codellam2_7b_hf_tknzr",
+		"prompt_path": "prompt",
+        "template_path":"prompt_template.txt", 
+        "prompt_input_csv_path":"prompt_input.csv",
+        "output_path": "output.txt",
+		"input_csv_path":"input.csv",
+        "output_csv_path":"output.csv",
+		"device":"cuda"
+	}
+	
+}

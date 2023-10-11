@@ -1,0 +1,43 @@
+xslt: sum(numbers/value)
+java: sumOf(numbers.getValue())
+####
+xslt: person/name
+java: person.getName()
+####
+xslt: person/age
+java: person.getAge()
+####
+xslt:/bookstore/book[1]
+java: inventory.getBookstore().getbook().get(0)
+####
+xslt:/section/article[1]
+java: media.getSection().getarticle().get(0)
+####
+xslt:/menu/item[1]
+java: food.getMenu().getitem().get(0)
+####
+xslt:/section/article[last()]
+java: media.getSection().getArticle().get(media.getSection().getArticle().size())
+####
+xslt:/bookstore/book[last()]
+java: inventory.getBookstore().getBook().get(inventory.getStore().getBook().size())
+####
+xslt:/menu/item[last()]
+java: food.getMenu().getItem().get(food.getMenu().getItem().size())
+####
+xslt:@id
+java: getId()
+####
+xslt:$bpd/BusinessProcessDiagram/documentation/documentation
+java:bpd.getBusinessProcessDiagram().getDocumentation().getDocumentation()
+####
+xslt:$bpd
+java:bpd
+####
+xslt:age
+java:.getAge()
+####
+xslt:@name
+java: getName()
+####
+xslt:

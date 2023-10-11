@@ -1,0 +1,80 @@
+//this method implements hierarchy of nodes for a given path
+
+//if the path string has any of the following keywords, it's a function. It should be replaced by equivalent java function implementation
+
+//concat ::: concat
+
+//starts-with ::: startsWith
+
+//count ::: count
+
+//contains ::: contains
+
+//substring ::: substring
+
+//substring-before ::: substringBefore
+
+//substring-after ::: substringAfter
+
+//string-length ::: length
+
+//normalize-space ::: trim
+
+//translate
+
+//format-number
+
+
+
+
+  public void getData(ParentNode parent){
+
+   
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[1]" */
+
+    inventory.getBookstore().getbook().get(0);
+    
+    
+    
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[last()]" */
+
+    inventory.getBookstore().getBook().get(inventory.getBookstore().getBook().size());
+    
+    
+    
+    /*implement the hierarchy of nodes for "inventory/store/book[last()]" */
+
+    inventory.getBookstore().getBook().get(inventory.getStore().getBook().size());
+    
+    
+    
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[last()-1]" */
+
+    inventory.getBookstore.getbook().get(bookstore.getbook().size()-1)
+
+    
+    
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[position()<3]" */
+
+    inventory.getBookstore.getbook().get(bookstore.getbook().size()-2)
+
+ 
+
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[price>35.00]" */
+
+    inventory.getBookstore().getBooks().stream().filter(book->book.getPrice().compareTo(BigDecimal.valueOf(35.00))>0).toList();
+    
+ 
+
+    /*implement the hierarchy of nodes for "inventory/bookstore/book[price>35.00]/title" */
+
+    inventory.getBookstore().getBooks().stream().filter(b->b.getPrice()>35).toList().map(b->b.title).collect(Collectors.toList());
+        
+        
+    /*implement the hierarchy of nodes for "<TEST CODE>" where parent is "inventory"*/
+
+    """ <FILL_ME>
+
+    return result
+
+  }

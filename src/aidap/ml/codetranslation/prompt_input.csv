@@ -1,0 +1,23 @@
+﻿esql,java
+BROKER SCHEMA IBM_FoodTrust_Utils,package IBM_FoodTrust_Utils;
+CREATE COMPUTE MODULE Auth_backup_message,public class Auth_backup_message{private LocalEnvironment OutputLocalEnvironment; private LocalEnvironment InputLocalEnvironment; private Root InputRoot; private Root OutputRoot;
+CREATE FUNCTION Main() RETURNS BOOLEAN,public boolean main() 
+BEGIN,{
+END;,}
+END MODULE;,}
+CALL XYZMethod();,XYZMethod();
+SET OutputLocalEnvironment = InputLocalEnvironment;,OutputLocalEnvironment = InputLocalEnvironment;
+SET OutputLocalEnvironment.Variables.message_backup = InputRoot;,"OutputLocalEnvironment.getVariables().put(""message_backup"",InputRoot);"
+RETURN TRUE;,return true;
+CREATE PROCEDURE CopyEntireMessage() BEGIN,public void CopyEntireMessage() {
+CREATE PROCEDURE CopyEntireMessage(),public void CopyEntireMessage()
+DECLARE J INTEGER;,int J;
+DECLARE I INTEGER 1;,int I=1;
+SET J = CARDINALITY(InputRoot.*[]);,J = InputRoot.getChildren().size();
+WHILE I < J DO,while(I<J){
+END WHILE;,}
+SET OutputLocalEnvironment.Destination.HTTP.ReplyStatusCode = '500';,OutputLocalEnvironment.getDesitnation().HTTP().setReplyStatusCode(500);
+SET I = I + 1;,I = I + 1;
+SET OutputRoot.*[I] = InputRoot.*[I];,"OutputRoot.setChildNode(I, InputRoot.getChildNode(I));"
+"SET OutputRoot.HTTPReplyHeader.""Content-Type"" = 'text/json';","OutputRoot.getHTTPReplyHeader().set(""Content-Type"", 'text/json');"
+IF (OutputLocalEnvironment.Variables.IFT.error_message IS NOT NULL) THEN,"if(OutputLocalEnvironment.getVariable(""IFT"").getError_message() !=null) {"

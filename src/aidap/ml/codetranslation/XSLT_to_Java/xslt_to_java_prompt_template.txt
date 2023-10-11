@@ -1,0 +1,19 @@
+//this method implements hierarchy of nodes for a given path
+//if the path string has any of the following keywords, it's a function. It should be replaced by equivalent java function implementation
+    //concat ::: concat
+    //starts-with ::: startsWith
+    //count ::: count
+    //contains ::: contains
+    //substring ::: substring
+    //substring-before ::: substringBefore
+    //substring-after ::: substringAfter
+    //string-length ::: length
+    //normalize-space ::: trim
+    //translate
+    //format-number
+
+public void getData(ParentNode parent){
+    ####/*implement the hierarchy of nodes for "<TEST CODE>"*/
+    <FILL_ME>
+    return result
+    }
