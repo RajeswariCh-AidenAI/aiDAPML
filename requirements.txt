@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+torch
+tqdm
+scikit-learn
+transformers
+sentence_transformers
+mysql-connector-python

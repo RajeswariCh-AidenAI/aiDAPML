@@ -18,7 +18,7 @@ generate_prompt_from_csv = True
 
 
 # with open("../properties.json", "r") as f:
-with open("properties.json", "r") as f:
+with open(base_path + "properties.json", "r") as f:
 	data = json.load(f)
 
 base_path = data["xslt_to_java"]['base_path']
@@ -33,11 +33,11 @@ template_path = data["xslt_to_java"]['template_path']
 device = data["xslt_to_java"]['device']
 
 
-#with open(output_path, 'w') as f:
+#with open(base_path + output_path, 'w') as f:
 #        f.write('category, xslt, java')
 
 def get_prompt(src, tgt, category, query):
-    with open(f'{src}_to_{tgt}_{prompt_path}_{category}.txt',"r") as f:
+    with open(base_path + f'{src}_to_{tgt}_{prompt_path}_{category}.txt',"r") as f:
         prompt = f.read()
     prompt = prompt.replace("<TEST CODE>", query)
     return prompt
@@ -52,7 +52,7 @@ def load_model(model_path, tokenizer_path):
     return model, tokenizer
 
 def convert_series(src, tgt):
-    df = pd.read_csv(f'{src}_to_{tgt}_' + input_csv_path)
+    df = pd.read_csv(basepath + f'{src}_to_{tgt}_' + input_csv_path)
     for i in range(len(df)):
        df.loc[i,"java"] = requests.get('http://54.242.243.62:8000/text2text', params = {'src': src, 'tgt':tgt, "query":df.loc[i, 'xslt'],"category":df.loc[i,'category'],  model:'codellama'})
     df.to_csv(output_data_path, index = False)
@@ -123,7 +123,7 @@ async def convert_xslt_to_java(src, tgt, query, category):
             result = result.replace(result[0], "")
     result = result.split(";")[0]
     print(f'{category}, {query}, {result}')
- #   with open(output_path, 'a') as f:
+ #   with open(base_path + output_path, 'a') as f:
  #       f.write(f'{category}, {query}, {result}')
     return result
 

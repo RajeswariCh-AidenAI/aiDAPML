@@ -1,0 +1,53 @@
+//this method implements hierarchy of nodes for a given path
+//if the path string has any of the following keywords, it's a function. It should be replaced by equivalent java function implementation
+    //concat ::: concat
+    //starts-with ::: startsWith
+    //count ::: count
+    //contains ::: contains
+    //substring ::: substring
+    //substring-before ::: substringBefore
+    //substring-after ::: substringAfter
+    //string-length ::: length
+    //normalize-space ::: trim
+    //translate
+    //format-number
+public void getData(ParentNode parent){
+    /*implement the hierarchy of nodes for "/in/class" where parent is "dummyNode" */
+    result = dummyNode.getIn().getClass();
+    
+    
+    
+    /*implement the hierarchy of nodes for "/eflowFCMComposite/id" where parent is "product" */
+    result = product.getEflowFCMComposite().getId();
+    
+    
+    
+    /*implement the hierarchy of nodes for "toDate" where parent is "leave" */
+    result = leave.getToDate();
+    
+    
+    
+    /*implement the hierarchy of nodes for "../location" where parent is "employee" */
+    result = employee.getLocation()
+    
+       
+    
+    /*implement the hierarchy of nodes for "/nodes/@location" where parent is "rootNode" */
+    result = rootNode.getNodes().getLocation();
+    
+    
+    
+    /*implement the hierarchy of nodes for "/connections/@xmi:id" where parent is "fcmHost" */
+    result = fcmHost.getConnections().getId();
+
+
+
+    /*implement the hierarchy of nodes for "/eClassifiers/@nodeLayoutStyle" where parent is "fcmComposite" */
+    result = fcmComposite.getEClassifiers().getNodeLayoutStyle();
+
+    
+  
+    /*implement the hierarchy of nodes for "<TEST CODE>" where parent is "inventory"*/
+    <FILL_ME>
+    return result
+    }

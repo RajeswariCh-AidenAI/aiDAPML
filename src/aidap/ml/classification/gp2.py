@@ -261,23 +261,24 @@ async def trainModel(filepath, model_name, version):
     	return f"An error has occured: {e}"
         
 async def inference(query, model_name, version):
-	try:
-		with open("../properties.json", "r") as f:
-			data = json.load(f)
-		
-		model_path = data["classification"]['model_path']+ f'{model_name}_v{version}.pkl' 
-		model = pickle.load(open(model_path, "rb"))
-		inputs = tokenizer(query, return_tensors="pt")
-		outputs = model(**inputs)
-		logits = outputs.logits
-		logits = logits.detach().cpu().numpy()
-		predictions = logits.argmax(axis=-1).flatten().tolist()
-		for i in predictions:
-			predictions_labels = [list(labels_ids.keys())[list(labels_ids.values()).index(i)]]
-		return predictions_labels[0]
-	except Exception as e:
-		traceback.print_exc()
-		return f"An error has occured: {e}"
+    try:
+          with open("../properties.json", "r") as f:
+               data = json.load(f)
+          model_path = data["classification"]['model_path']+ f'{model_name}_v{version}.pkl' 
+          model = pickle.load(open(model_path, "rb"))
+          model.to(device)
+          inputs = tokenizer(query, return_tensors="pt")
+          inputs.to(device)
+          outputs = model(**inputs)
+          logits = outputs.logits
+          logits = logits.detach().cpu().numpy()
+          predictions = logits.argmax(axis=-1).flatten().tolist()
+          for i in predictions:
+            predictions_labels = [list(labels_ids.keys())[list(labels_ids.values()).index(i)]]
+          return predictions_labels[0]
+    except Exception as e:
+        traceback.print_exc()
+        return f"An error has occured: {e}"
 	# filepath = "train_data.csv"
 # model_name = "gpt2"
 # version = 1
